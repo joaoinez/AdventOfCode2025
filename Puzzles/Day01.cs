@@ -19,7 +19,6 @@ public class Day01
   {
     var lines = InputParser.GetInputLines("01", filename);
 
-    var dial = Enumerable.Range(0, 100).ToArray();
     var dialPosition = 50;
     var password = 0;
 
@@ -29,16 +28,15 @@ public class Day01
       {
         var (rotationDirection, rotationAmount) = (line[0], int.Parse(line[1..]));
 
-        dialPosition = dial[
+        dialPosition =
           (
             (
               rotationDirection == 'L' ? dialPosition - rotationAmount
               : rotationDirection == 'R' ? dialPosition + rotationAmount
               : throw new FormatException("Invalid direction")
-            ) % dial.Length
-            + dial.Length
-          ) % dial.Length
-        ];
+            ) % 100
+            + 100
+          ) % 100;
 
         if (dialPosition == 0)
           password++;
@@ -63,7 +61,6 @@ public class Day01
   {
     var lines = InputParser.GetInputLines("01", filename);
 
-    var dial = Enumerable.Range(0, 100).ToArray();
     var dialPosition = 50;
     var password = 0;
 
@@ -74,27 +71,26 @@ public class Day01
         var (rotationDirection, rotationAmount) = (line[0], int.Parse(line[1..]));
 
         if (rotationDirection == 'R')
-          password += (dialPosition + rotationAmount) / dial.Length;
+          password += (dialPosition + rotationAmount) / 100;
         else if (rotationDirection == 'L')
         {
           if (dialPosition == 0)
-            password += rotationAmount / dial.Length;
+            password += rotationAmount / 100;
           else if (rotationAmount >= dialPosition)
-            password += 1 + (rotationAmount - dialPosition) / dial.Length;
+            password += 1 + (rotationAmount - dialPosition) / 100;
         }
         else
           throw new FormatException("Invalid direction");
 
-        dialPosition = dial[
+        dialPosition =
           (
             (
               rotationDirection == 'L' ? dialPosition - rotationAmount
               : rotationDirection == 'R' ? dialPosition + rotationAmount
               : throw new FormatException("Invalid direction")
-            ) % dial.Length
-            + dial.Length
-          ) % dial.Length
-        ];
+            ) % 100
+            + 100
+          ) % 100;
       }
       catch (Exception e)
       {
