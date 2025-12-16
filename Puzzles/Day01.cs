@@ -1,23 +1,12 @@
-#:sdk Microsoft.NET.Sdk
+using AdventOfCode.Services;
 
-namespace Day01;
-
-public static class InputParser
-{
-  public static string[] GetInputLines(string day, string filename)
-  {
-    var projectRootPath = Directory.GetCurrentDirectory();
-    var inputFilePath = Path.Combine(projectRootPath, $"Inputs/day{day}", $"{filename}.txt");
-
-    return File.ReadAllLines(inputFilePath);
-  }
-}
+namespace AdventOfCode.Puzzles;
 
 public class Day01
 {
   private static int Part1(string filename = "example")
   {
-    var lines = InputParser.GetInputLines("01", filename);
+    var lines = InputParserService.GetInputLines("01", filename);
 
     var dialPosition = 50;
     var password = 0;
@@ -59,7 +48,7 @@ public class Day01
 
   private static int Part2(string filename = "example")
   {
-    var lines = InputParser.GetInputLines("01", filename);
+    var lines = InputParserService.GetInputLines("01", filename);
 
     var dialPosition = 50;
     var password = 0;
@@ -106,22 +95,5 @@ public class Day01
     }
 
     return password;
-  }
-
-  public static void Main()
-  {
-    Console.WriteLine("[[Part 1]]");
-    var example1 = Part1();
-    Console.WriteLine($"Example Answer: {example1}. Expected: 3");
-    var solution1 = Part1("input");
-    Console.WriteLine($"Problem Answer: {solution1}"); //=> 1123
-
-    Console.WriteLine("\n...---...\n");
-
-    Console.WriteLine("[[Part 2]]");
-    var example2 = Part2();
-    Console.WriteLine($"Example Answer: {example2}. Expected: 6");
-    var solution2 = Part2("input");
-    Console.WriteLine($"Problem Answer: {solution2}"); //=> 6695
   }
 }

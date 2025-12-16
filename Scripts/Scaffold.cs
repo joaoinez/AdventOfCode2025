@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/dotnet run
+/* #!/opt/homebrew/bin/dotnet run
 #:sdk Microsoft.NET.Sdk
 
 if (args.Length == 0)
@@ -41,52 +41,45 @@ File.WriteAllText(inputFile, "");
 
 // Create puzzle file with scaffold
 var puzzleContent =
-  $@"#:sdk Microsoft.NET.Sdk
+  $@"using AdventOfCode.Services;
 
 namespace {dayClass};
 
-public static class InputParser
-{{
-  public static string[] GetInputLines(string day, string filename)
-  {{
-    var projectRootPath = Directory.GetCurrentDirectory();
-    var inputFilePath = Path.Combine(projectRootPath, $""Inputs/day{{day}}"", $""{{filename}}.txt"");
-
-    return File.ReadAllLines(inputFilePath);
-  }}
-}}
-
 public class {dayClass}
 {{
-  private static void Part1(string filename = ""example"")
+  private static string[] Part1(string filename = ""example"")
   {{
     var lines = InputParser.GetInputLines(""{dayPadded}"", filename);
 
     // TODO: Implement Part 1
+
+    return lines;
   }}
 
-  private static void Part2(string filename = ""example"")
+  private static string[] Part2(string filename = ""example"")
   {{
     var lines = InputParser.GetInputLines(""{dayPadded}"", filename);
 
     // TODO: Implement Part 2
+
+    return lines;
   }}
 
   public static void Main()
   {{
     Console.WriteLine(""[[Part 1]]"");
-    Part1();
-    Console.WriteLine(""Example Answer: "");
-    Part1(""input"");
-    Console.WriteLine(""Problem Answer: "");
+    var example1 = Part1();
+    Console.WriteLine($""Example Answer: {{example1}}. Expected: "");
+    var solution1 = Part1(""input"");
+    Console.WriteLine($""Problem Answer: {{solution1}}"");
 
     Console.WriteLine(""\n...---...\n"");
 
     Console.WriteLine(""[[Part 2]]"");
-    Part2();
-    Console.WriteLine(""Example Answer: "");
-    Part2(""input"");
-    Console.WriteLine(""Problem Answer: "");
+    var example2 = Part2();
+    Console.WriteLine($""Example Answer: {{example2}}. Expected: "");
+    var solution2 = Part2(""input"");
+    Console.WriteLine($""Problem Answer: {{solution2}}"");
   }}
 }}
 ";
@@ -97,3 +90,4 @@ Console.WriteLine($"Created {puzzleFile}");
 Console.WriteLine($"Created {inputDir}/");
 Console.WriteLine($"Created {exampleFile}");
 Console.WriteLine($"Created {inputFile}");
+ */
