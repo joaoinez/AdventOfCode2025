@@ -48,7 +48,7 @@ namespace AdventOfCode.Puzzles;
 
 public class {dayClass}
 {{
-  private static string[] Part1(string filename = ""example"")
+  public static string[] Part1(string filename = ""example"")
   {{
     var lines = InputParserService.GetInputLines(""{dayPadded}"", filename);
 
@@ -57,7 +57,7 @@ public class {dayClass}
     return lines;
   }}
 
-  private static string[] Part2(string filename = ""example"")
+  public static string[] Part2(string filename = ""example"")
   {{
     var lines = InputParserService.GetInputLines(""{dayPadded}"", filename);
 
