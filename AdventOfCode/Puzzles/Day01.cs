@@ -4,7 +4,10 @@ namespace AdventOfCode.Puzzles;
 
 public class Day01
 {
-  private static int Part1(string filename = "example")
+  public static readonly string Part1ExpectedValue = "3";
+  public static readonly string Part2ExpectedValue = "6";
+
+  public static int Part1(string filename = "example")
   {
     var lines = InputParserService.GetInputLines("01", filename);
 
@@ -46,7 +49,7 @@ public class Day01
     return password;
   }
 
-  private static int Part2(string filename = "example")
+  public static int Part2(string filename = "example")
   {
     var lines = InputParserService.GetInputLines("01", filename);
 

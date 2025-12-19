@@ -48,6 +48,9 @@ namespace AdventOfCode.Puzzles;
 
 public class {dayClass}
 {{
+  public static readonly string Part1ExpectedValue = """";
+  public static readonly string Part2ExpectedValue = """";
+
   public static string[] Part1(string filename = ""example"")
   {{
     var lines = InputParserService.GetInputLines(""{dayPadded}"", filename);

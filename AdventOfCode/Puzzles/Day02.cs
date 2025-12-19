@@ -4,7 +4,10 @@ namespace AdventOfCode.Puzzles;
 
 public class Day02
 {
-  private static ulong Part1(string filename = "example")
+  public static readonly string Part1ExpectedValue = "1227775554";
+  public static readonly string Part2ExpectedValue = "4174379265";
+
+  public static ulong Part1(string filename = "example")
   {
     var line = InputParserService.GetInputLines("02", filename)[0];
 
@@ -36,7 +39,7 @@ public class Day02
     return invalidIdsSum;
   }
 
-  private static ulong Part2(string filename = "example")
+  public static ulong Part2(string filename = "example")
   {
     var line = InputParserService.GetInputLines("02", filename)[0];
 

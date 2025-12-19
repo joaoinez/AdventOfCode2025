@@ -4,6 +4,9 @@ namespace AdventOfCode.Puzzles;
 
 public class Day04
 {
+  public static readonly string Part1ExpectedValue = "13";
+  public static readonly string Part2ExpectedValue = "43";
+
   private static readonly char PAPER_ROLL = '@';
 
   private static bool IsPaperRollAccessible((int x, int y) position, char[][] grid)

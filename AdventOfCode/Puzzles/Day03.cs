@@ -4,6 +4,9 @@ namespace AdventOfCode.Puzzles;
 
 public class Day03
 {
+  public static readonly string Part1ExpectedValue = "357";
+  public static readonly string Part2ExpectedValue = "3121910778619";
+
   public static int Part1(string filename = "example")
   {
     var banks = InputParserService.GetInputLines("03", filename);

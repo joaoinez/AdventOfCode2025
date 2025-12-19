@@ -4,6 +4,9 @@ namespace AdventOfCode.Puzzles;
 
 public class Day06
 {
+  public static readonly string Part1ExpectedValue = "4277556";
+  public static readonly string Part2ExpectedValue = "3263827";
+
   private static readonly char SUM = '+';
   private static readonly char MULT = '*';
 
